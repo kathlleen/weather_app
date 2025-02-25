@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Query History</h1>
+<table>
+    <tr>
+        <th>City</th>
+        <th>Temperature</th>
+        <th>Condition</th>
+        <th>Timestamp</th>
+    </tr>
+    {% for query in history %}
+    <tr>
+        <td>{{ query.city }}</td>
+        <td>{{ query.temperature }}°C</td>
+        <td>{{ query.description }}</td>
+        <td>{{ query.timestamp }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

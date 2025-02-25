@@ -1,39 +1,164 @@
+/* 🎨 Основные стили */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ffffff;
+    --text-color: #333;
+    --border-radius: 8px;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #87CEFA, #ffffff);
     margin: 0;
     padding: 0;
+    color: var(--text-color);
 }
+
+/* 📌 Навигация */
+nav {
+    background: var(--primary-color);
+    padding: 15px 0;
+}
+
 nav ul {
-    display: flex;
-    background: #333;
-    padding: 10px;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
+
 nav ul li {
-    margin-right: 20px;
+    margin: 0 20px;
 }
+
 nav ul li a {
-    color: white;
+    color: var(--secondary-color);
     text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
 }
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 📌 Заголовки */
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+
+
+/* 📌 Контейнер */
 .container {
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    background: var(--secondary-color);
     padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
+
+/* 📌 Форма поиска погоды */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ffcc00;
+}
+
+button {
+    padding: 12px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--secondary-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #357ABD;
+}
+
+/* 📌 Отображение погоды */
+.weather-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: var(--border-radius);
+}
+
+.weather-info h2 {
+    margin-bottom: 5px;
+}
+
+.weather-info p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* 📌 История запросов */
+.history-container {
+    margin-top: 30px;
+}
+
+.history-container h2 {
+    text-align: center;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-table, th, td {
-    border: 1px solid #ddd;
-}
+
 th, td {
-    padding: 10px;
-    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* 📌 Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
 }
