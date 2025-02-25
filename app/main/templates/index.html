@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home - Weather App{% endblock %}
+{% block content %}
+<h1>Weather Query</h1>
+<form id="weather-form" method="post">
+    {% csrf_token %}
+    <input type="text" name="city" id="city" placeholder="Enter city name" required>
+    <button type="submit">Get Weather</button>
+</form>
+<div id="weather-result">
+    {% if weather %}
+    <h2>Weather in {{ weather.city }}</h2>
+    <p>Temperature: {{ weather.temperature }}°C</p>
+    <p>Condition: {{ weather.description }}</p>
+    {% endif %}
+</div>
+{% endblock %}
