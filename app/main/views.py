@@ -9,8 +9,10 @@ from django.utils.timezone import now
 from .forms import WeatherForm
 from dotenv import load_dotenv
 
-load_dotenv()
-API_KEY = os.getenv("API_KEY")
+# load_dotenv()
+# API_KEY = os.getenv("API_KEY")
+
+API_KEY = "7bc08d2bc6a14988a2482009252602"
 
 class WeatherView(FormView):
     template_name = "index.html"
