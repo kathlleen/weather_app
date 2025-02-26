@@ -22,6 +22,6 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('/query', views.query, name='query-history'),
+    path('', views.WeatherView.as_view(), name='index'),
+    path('query/', views.query, name='query-history'),
 ]

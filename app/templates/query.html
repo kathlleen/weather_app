@@ -11,9 +11,9 @@
     </tr>
     {% for query in history %}
     <tr>
-        <td>{{ query.city }}</td>
-        <td>{{ query.temperature }}°C</td>
-        <td>{{ query.description }}</td>
+        <td>{{ query.city_name }}</td>
+        <td>{{ query.temperature_c }}°C</td>
+        <td>{{ query.condition }}</td>
         <td>{{ query.timestamp }}</td>
     </tr>
     {% endfor %}
