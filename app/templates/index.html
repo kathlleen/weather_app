@@ -2,22 +2,60 @@
 
 {% block content %}
 <h1>Weather in the City</h1>
+
+<!-- Форма поиска -->
 <form id="weather-form" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Get Weather</button>
+    <div class="input-container">
+        <input type="text" name="city" id="city" placeholder="Enter city name" required>
+        <button type="submit">🔍 Search</button>
+    </div>
 </form>
 
-<div id="weather-result" class="weather-info">
-    {% if city_weather %}
-        <h2>Weather in {{ city_weather.city_name }}</h2>
-        <p>Temperature: {{ city_weather.temperature_c }}°C</p>
-        <p>Condition: {{ city_weather.condition }}</p>
-        <img src="{{ city_weather.icon_url }}" alt="Weather icon">
-    {% endif %}
-</div>
+<!-- Вывод погоды -->
+{% if city_weather %}
+<div class="weather-card">
+    <h2>🌤️ Weather in {{ city_weather.city_name }}, {{ city_weather.country }}</h2>
+    <p><strong>📍 Coordinates:</strong> {{ city_weather.latitude }}, {{ city_weather.longitude }}</p>
 
-{% if error %}
-    <p style="color: red;">{{ error }}</p>
+    <div class="weather-info">
+        <img src="{{ city_weather.icon_url }}" alt="Weather icon">
+        <table class="weather-table">
+            <tr>
+                <th>Temperature</th>
+                <td>{{ city_weather.temperature_c }}°C</td>
+            </tr>
+            <tr>
+                <th>Feels like</th>
+                <td>{{ city_weather.feels_like_c }}°C</td>
+            </tr>
+            <tr>
+                <th>Wind Speed</th>
+                <td>{{ city_weather.wind_speed_kph }} km/h</td>
+            </tr>
+            <tr>
+                <th>Humidity</th>
+                <td>{{ city_weather.humidity }}%</td>
+            </tr>
+            <tr>
+                <th>Pressure</th>
+                <td>{{ city_weather.pressure_mb }} mb</td>
+            </tr>
+            <tr>
+                <th>Condition</th>
+                <td>{{ city_weather.condition }}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <p class="timestamp">📅 Data retrieved at: {{ city_weather.timestamp }}</p>
+</div>
 {% endif %}
+
+<!-- Ошибка, если не удалось получить данные -->
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
 {% endblock %}

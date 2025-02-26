@@ -58,8 +58,12 @@ class WeatherView(FormView):
 
 
 def query(request):
+
+    weather_history = WeatherModel.objects.all()
+
     context = {
-        'title': 'Query history'
+        'title': 'Query history',
+        'weather_history' : weather_history,
     }
     return render(request, 'query.html', context)
 

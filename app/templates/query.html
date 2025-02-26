@@ -2,20 +2,32 @@
 
 {% block content %}
 <h1>Query History</h1>
-<table>
-    <tr>
-        <th>City</th>
-        <th>Temperature</th>
-        <th>Condition</th>
-        <th>Timestamp</th>
-    </tr>
-    {% for query in history %}
-    <tr>
-        <td>{{ query.city_name }}</td>
-        <td>{{ query.temperature_c }}°C</td>
-        <td>{{ query.condition }}</td>
-        <td>{{ query.timestamp }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="query-table">
+    <table>
+        <tr>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Feels like</th>
+            <th>Condition</th>
+            <th>Wind speed (kph)</th>
+            <th>Humidity</th>
+            <th>Timestamp</th>
+            <th>Icon</th>
+        </tr>
+        {% for query in weather_history %}
+        <tr>
+            <td>{{ query.city_name }}</td>
+            <td>{{ query.temperature_c }}°C</td>
+            <td>{{ query.feels_like_c }}°C</td>
+            <td>{{ query.condition }}</td>
+            <td>{{ query.wind_speed_kph }}</td>
+            <td>{{ query.humidity }}</td>
+            <td>{{ query.timestamp }}</td>
+            <td>
+                <img src="{{ query.icon_url }}" alt="Weather icon">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}

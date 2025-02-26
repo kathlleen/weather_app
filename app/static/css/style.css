@@ -44,38 +44,39 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* 📌 Заголовки */
-h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
 
-}
-
-
-/* 📌 Контейнер */
-.container {
+/* 🌤️ Основные стили */
+.weather-container {
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 30px auto;
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: var(--border-radius);
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* 📌 Форма поиска погоды */
-form {
+/* 📌 Заголовки */
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+
+/* 📌 Форма */
+.input-container {
     display: flex;
-    flex-direction: column;
     gap: 10px;
+    justify-content: center;
 }
 
 input[type="text"] {
     padding: 12px;
-    border: 2px solid var(--primary-color);
-    border-radius: var(--border-radius);
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
     font-size: 16px;
+    width: 70%;
     outline: none;
     transition: 0.3s;
 }
@@ -85,11 +86,11 @@ input[type="text"]:focus {
 }
 
 button {
-    padding: 12px;
-    background: var(--primary-color);
+    padding: 12px 20px;
+    background: #4a90e2;
     border: none;
-    border-radius: var(--border-radius);
-    color: var(--secondary-color);
+    border-radius: 8px;
+    color: white;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
@@ -99,22 +100,82 @@ button:hover {
     background: #357ABD;
 }
 
-/* 📌 Отображение погоды */
-.weather-info {
+/* 📌 Карточка погоды */
+.weather-card {
     margin-top: 20px;
-    padding: 15px;
-    background: rgba(74, 144, 226, 0.1);
-    border-radius: var(--border-radius);
+    padding: 20px;
+    border-radius: 10px;
+    background: #f0f8ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-.weather-info h2 {
-    margin-bottom: 5px;
+.weather-info {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    gap: 20px;
 }
 
-.weather-info p {
+.weather-info img {
+    width: 80px;
+    height: 80px;
+}
+
+/* 📌 Таблица погоды */
+.weather-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-table th, .weather-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.weather-table th {
+    background: #4a90e2;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+}
+
+.weather-table td {
     font-size: 18px;
-    margin: 5px 0;
+    color: #333;
 }
+
+/* 📌 Убираем границу у последней строки */
+.weather-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* 📌 Ошибки */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.timestamp {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
 
 /* 📌 История запросов */
 .history-container {
@@ -125,24 +186,24 @@ button:hover {
     text-align: center;
 }
 
-table {
+.query-table table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-th, td {
+.query-table th, td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
 
-th {
+.query-table th {
     background: var(--primary-color);
     color: var(--secondary-color);
 }
 
-tr:nth-child(even) {
+.query-table tr:nth-child(even) {
     background: #f9f9f9;
 }
 
