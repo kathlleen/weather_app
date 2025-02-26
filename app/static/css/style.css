@@ -14,7 +14,7 @@ body {
     color: var(--text-color);
 }
 
-/* 📌 Навигация */
+/* Навигация */
 nav {
     background: var(--primary-color);
     padding: 15px 0;
@@ -57,14 +57,14 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* 📌 Заголовки */
+/* Заголовки */
 h1 {
     font-size: 26px;
     margin-bottom: 20px;
 }
 
 
-/* 📌 Форма */
+/* Форма */
 .input-container {
     display: flex;
     gap: 10px;
@@ -100,7 +100,7 @@ button:hover {
     background: #357ABD;
 }
 
-/* 📌 Карточка погоды */
+/* Карточка погоды */
 .weather-card {
     margin-top: 20px;
     padding: 20px;
@@ -128,7 +128,7 @@ button:hover {
     height: 80px;
 }
 
-/* 📌 Таблица погоды */
+/* Таблица погоды */
 .weather-table {
     width: 100%;
     margin-top: 15px;
@@ -158,13 +158,12 @@ button:hover {
     color: #333;
 }
 
-/* 📌 Убираем границу у последней строки */
 .weather-table tr:last-child td {
     border-bottom: none;
 }
 
 
-/* 📌 Ошибки */
+/* Ошибки */
 .error {
     color: red;
     margin-top: 10px;
@@ -177,7 +176,7 @@ button:hover {
 }
 
 
-/* 📌 История запросов */
+/* История запросов */
 .history-container {
     margin-top: 30px;
 }
@@ -207,7 +206,7 @@ button:hover {
     background: #f9f9f9;
 }
 
-/* 📌 Адаптивность */
+/* Адаптивность */
 @media (max-width: 600px) {
     .container {
         width: 95%;

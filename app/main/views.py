@@ -23,7 +23,7 @@ class WeatherView(FormView):
         weather_response = requests.get(weather_url)
 
         if weather_response.status_code != 200:
-            return self.render_to_response({"form": form, "error": "Не удалось получить данные о погоде"})
+            return self.render_to_response({"form": form, "error": "Couldn't get weather data"})
 
         weather_data = weather_response.json()
         self.save_weather_data(city, weather_data)
