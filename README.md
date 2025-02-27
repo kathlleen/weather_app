@@ -7,8 +7,8 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/kathleen/weather_app.git
-   cd yourproject
+   git clone https://github.com/kathlleen/weather_app.git
+   cd weather_app
 
 2. Создайте и активируйте виртуальное окружение:
 
@@ -46,6 +46,7 @@ DB_PORT=5432
 5. Примените миграции базы данных:
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
