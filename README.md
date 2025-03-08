@@ -1,14 +1,19 @@
 # Название проекта
 
-Описание проекта.
+Простое веб-приложение, позволяющее вводить название города, получать текущие данные о погоде, просматривать историю запросов.
+
+_Технологии:_
+- Python
+- Django
+- PostreSQL
 
 ## Установка
 
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/kathleen/weather_app.git
-   cd yourproject
+   git clone https://github.com/kathlleen/weather_app.git
+   cd weather_app
 
 2. Создайте и активируйте виртуальное окружение:
 
@@ -48,6 +53,7 @@ API ключ нужно получить на сайте https://www.weatherapi.
 5. Примените миграции базы данных:
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
