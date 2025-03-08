@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 # load_dotenv()
 # API_KEY = os.getenv("API_KEY")
 
-API_KEY = "7bc08d2bc6a14988a2482009252602"
+API_KEY = os.getenv("API_KEY")
 
 class WeatherView(FormView):
     template_name = "index.html"
