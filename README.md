@@ -70,4 +70,4 @@ python manage.py runserver
 Для работы с PostgreSQL требуется установить библиотеку psycopg2, которая уже указана в requirements.txt.
 Чтобы изменить конфигурацию базы данных или ключи, просто отредактируйте файл .env.
 
-![Описание изображения](app/assets/img.png)
+![Интерфейс](app/assets/img.png)
